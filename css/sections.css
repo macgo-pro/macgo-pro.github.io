@@ -1,0 +1,1734 @@
+/* ==========================================================================
+   MACGO PRO v2.5 — Section Layouts & Responsive Design
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Hero Section & Interactive Command Center Mockup
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  padding-top: 64px;
+  padding-bottom: 84px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg-deep);
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255, 184, 0, 0.13) 0%, transparent 42%),
+    radial-gradient(circle at 88% 78%, rgba(0, 229, 255, 0.12) 0%, transparent 45%),
+    linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+  background-position: center top;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.hero-content .status-pill {
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.05rem, 4vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+}
+
+.hero-subtitle {
+  font-size: 1.06rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 26px;
+  max-width: 590px;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.hero-video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--cyan-hi);
+  margin-bottom: 20px;
+  padding: 4px 0;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.hero-video-link:hover {
+  color: var(--gold-hi);
+  transform: translateX(3px);
+}
+
+.hero-trust {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: rgba(16, 23, 36, 0.78);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 28px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+  padding-top: 22px;
+  border-top: 1px solid rgba(49, 70, 104, 0.45);
+}
+
+.stat-item {
+  background: rgba(16, 23, 36, 0.65);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.stat-item:hover {
+  border-color: var(--border-hi);
+  transform: translateY(-2px);
+}
+
+.stat-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--gold-hi);
+  margin-bottom: 3px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* Hero Right Column: Interactive MACGO PRO v2.5 Window Mockup */
+.hero-mockup {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+}
+
+.mockup-window {
+  position: relative;
+  background: linear-gradient(180deg, #121A2A 0%, #0B101A 100%);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg), 0 0 45px rgba(0, 229, 255, 0.1);
+  overflow: hidden;
+}
+
+.mockup-window::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--cyan) 50%, var(--emerald) 100%);
+  z-index: 3;
+}
+
+.mockup-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 13px 18px;
+  background: rgba(8, 12, 19, 0.9);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.mockup-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.mockup-dots span,
+.mockup-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border-hi);
+  display: inline-block;
+}
+
+.mockup-dots span:nth-child(1) {
+  background: var(--crimson);
+}
+
+.mockup-dots span:nth-child(2) {
+  background: var(--gold);
+}
+
+.mockup-dots span:nth-child(3) {
+  background: var(--emerald);
+}
+
+.mockup-title {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.mockup-body {
+  position: relative;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Weapon Preset Selector */
+.preset-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  background: var(--bg-input);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.preset-btn {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 8px 6px;
+  border-radius: var(--radius-xs);
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  text-align: center;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preset-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.preset-btn.is-active {
+  color: var(--bg-deep);
+  background: linear-gradient(135deg, var(--gold-hi) 0%, var(--gold) 100%);
+  border-color: var(--gold-hi);
+  box-shadow: 0 2px 12px rgba(255, 184, 0, 0.35);
+}
+
+/* Active Slot 1 Loadout Card */
+.loadout-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-md);
+  padding: 15px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.loadout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.loadout-weapon {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold-hi);
+  letter-spacing: 0.02em;
+}
+
+.loadout-scope {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--cyan-hi);
+  background: var(--cyan-dim);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.loadout-attachments,
+.loadout-meta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Animated Scan Beam */
+.scan-beam {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background: rgba(0, 229, 255, 0.14);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.scan-beam::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -35%;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--cyan), var(--cyan-hi), transparent);
+  box-shadow: 0 0 12px var(--cyan);
+  animation: scanBeamMove 2.6s linear infinite;
+}
+
+@keyframes scanBeamMove {
+  0% {
+    left: -35%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* 4-Phase Recoil System Grid */
+.phase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.phase-card {
+  position: relative;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--cyan);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.phase-card:hover {
+  transform: translateY(-2px);
+}
+
+.phase-card.phase-1 {
+  border-left-color: var(--cyan);
+  background: linear-gradient(90deg, rgba(0, 229, 255, 0.08) 0%, var(--bg-input) 75%);
+}
+
+.phase-card.phase-2 {
+  border-left-color: var(--emerald);
+  background: linear-gradient(90deg, rgba(0, 230, 138, 0.08) 0%, var(--bg-input) 75%);
+}
+
+.phase-card.phase-3 {
+  border-left-color: var(--gold);
+  background: linear-gradient(90deg, rgba(255, 184, 0, 0.08) 0%, var(--bg-input) 75%);
+}
+
+.phase-card.phase-4 {
+  border-left-color: var(--crimson);
+  background: linear-gradient(90deg, rgba(255, 59, 92, 0.08) 0%, var(--bg-input) 75%);
+}
+
+.phase-header,
+.phase-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.phase-label,
+.phase-name {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.phase-1 .phase-label,
+.phase-1 .phase-name,
+.phase-1 .phase-value {
+  color: var(--cyan-hi);
+}
+
+.phase-2 .phase-label,
+.phase-2 .phase-name,
+.phase-2 .phase-value {
+  color: var(--emerald-hi);
+}
+
+.phase-3 .phase-label,
+.phase-3 .phase-name,
+.phase-3 .phase-value {
+  color: var(--gold-hi);
+}
+
+.phase-4 .phase-label,
+.phase-4 .phase-name,
+.phase-4 .phase-value {
+  color: var(--crimson-hi);
+}
+
+.phase-bullets,
+.phase-sub {
+  font-family: var(--font-mono);
+  font-size: 0.71rem;
+  color: var(--text-muted);
+}
+
+.phase-value,
+.phase-num {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.phase-bar {
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.phase-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  transition: width 0.35s var(--ease-out);
+}
+
+.phase-1 .phase-bar-fill {
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+}
+
+.phase-2 .phase-bar-fill {
+  background: var(--emerald);
+  box-shadow: 0 0 8px var(--emerald);
+}
+
+.phase-3 .phase-bar-fill {
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold);
+}
+
+.phase-4 .phase-bar-fill {
+  background: var(--crimson);
+  box-shadow: 0 0 8px var(--crimson);
+}
+
+/* Mockup In-Game HUD Overlay Bar */
+.mockup-hud-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #06090F;
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.mockup-hud-bar strong {
+  color: var(--emerald);
+}
+
+/* --------------------------------------------------------------------------
+   2. Core Features Bento Grid (#features)
+   -------------------------------------------------------------------------- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.feature-card {
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-card) 0%, rgba(16, 23, 36, 0.92) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan), transparent);
+  opacity: 0.65;
+  transition: opacity var(--transition-fast);
+}
+
+.feature-card:nth-child(2)::before,
+.feature-card:nth-child(6)::before {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.feature-card:nth-child(3)::before {
+  background: linear-gradient(90deg, var(--emerald), transparent);
+}
+
+.feature-card:nth-child(5)::before {
+  background: linear-gradient(90deg, var(--crimson), transparent);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  background: var(--bg-card-hover);
+  border-color: var(--border-hi);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.feature-card-top,
+.feature-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.feature-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cyan-dim);
+  color: var(--cyan-hi);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.feature-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.feature-card:nth-child(2) .feature-icon,
+.feature-card:nth-child(6) .feature-icon,
+.feature-icon.icon-gold {
+  background: var(--gold-dim);
+  color: var(--gold-hi);
+  border-color: rgba(255, 184, 0, 0.35);
+}
+
+.feature-card:nth-child(3) .feature-icon,
+.feature-icon.icon-emerald {
+  background: var(--emerald-dim);
+  color: var(--emerald-hi);
+  border-color: rgba(0, 230, 138, 0.35);
+}
+
+.feature-card:nth-child(5) .feature-icon,
+.feature-icon.icon-crimson {
+  background: var(--crimson-dim);
+  color: var(--crimson-hi);
+  border-color: rgba(255, 59, 92, 0.35);
+}
+
+.feature-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  align-self: flex-start;
+}
+
+.feature-title {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.feature-desc {
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* --------------------------------------------------------------------------
+   3. 40+ Weapons Arsenal & Attachments (#weapons)
+   -------------------------------------------------------------------------- */
+.weapon-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hi);
+  background: var(--bg-card-hover);
+}
+
+.filter-btn.is-active {
+  background: linear-gradient(135deg, var(--gold-hi) 0%, var(--gold) 100%);
+  color: var(--bg-deep);
+  border-color: var(--gold-hi);
+  box-shadow: 0 4px 16px rgba(255, 184, 0, 0.3);
+}
+
+.weapons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.weapon-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 11px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.weapon-chip:hover {
+  transform: translateY(-2px);
+  background: var(--bg-card-hover);
+  border-color: var(--gold);
+}
+
+.weapon-cat-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: var(--bg-input);
+  color: var(--cyan-hi);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  flex-shrink: 0;
+}
+
+.accessory-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+}
+
+.acc-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.acc-group-title,
+.acc-group-label,
+.acc-group strong {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gold-hi);
+}
+
+.acc-badges,
+.acc-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.acc-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.77rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-input);
+  border: 1px solid var(--border-hi);
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+}
+
+/* --------------------------------------------------------------------------
+   4. Video Demo & Interactive Chapters (#video)
+   -------------------------------------------------------------------------- */
+.video-layout {
+  display: grid;
+  grid-template-columns: 1.45fr 0.85fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.video-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-input);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg), 0 0 36px rgba(0, 229, 255, 0.12);
+}
+
+/* Tactical Corner Accents */
+.video-frame::before,
+.video-frame::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.video-frame::before {
+  top: 10px;
+  left: 10px;
+  border-top: 2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+}
+
+.video-frame::after {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 2px solid var(--cyan);
+  border-right: 2px solid var(--cyan);
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.yt-facade {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #06090E;
+}
+
+.yt-thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.78;
+  transition: transform 0.45s var(--ease-out), opacity 0.3s ease;
+}
+
+.yt-facade:hover .yt-thumb {
+  transform: scale(1.03);
+  opacity: 0.92;
+}
+
+.yt-facade::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(9, 13, 20, 0.15) 0%, rgba(9, 13, 20, 0.75) 100%);
+  pointer-events: none;
+}
+
+.yt-play-btn {
+  position: relative;
+  z-index: 3;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-hi) 0%, var(--gold) 100%);
+  color: var(--bg-deep);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 10px rgba(255, 184, 0, 0.2), 0 12px 32px rgba(0, 0, 0, 0.65);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.yt-play-btn svg {
+  width: 30px;
+  height: 30px;
+  margin-left: 3px;
+}
+
+.yt-facade:hover .yt-play-btn {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 14px rgba(255, 184, 0, 0.3), 0 16px 40px rgba(255, 184, 0, 0.45);
+}
+
+/* Video Chapters List */
+.chapter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+
+.chapter-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.chapter-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hi);
+  transform: translateX(3px);
+}
+
+.chapter-btn.is-active {
+  background: linear-gradient(90deg, rgba(255, 184, 0, 0.16) 0%, var(--bg-card) 100%);
+  border-color: var(--gold);
+  box-shadow: 0 4px 16px rgba(255, 184, 0, 0.14);
+}
+
+.chapter-time {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--cyan-hi);
+  background: var(--bg-input);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  padding: 4px 9px;
+  border-radius: var(--radius-xs);
+  flex-shrink: 0;
+}
+
+.chapter-btn.is-active .chapter-time {
+  color: var(--bg-deep);
+  background: var(--gold);
+  border-color: var(--gold-hi);
+}
+
+.chapter-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.video-cta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 22px;
+  padding: 16px 22px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+/* --------------------------------------------------------------------------
+   5. Pricing Section — MACGO ONLY (4 Featured Top + 3 Compact Bottom)
+   -------------------------------------------------------------------------- */
+.pricing-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-panel) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-hi);
+  box-shadow: var(--shadow-md);
+}
+
+/* Popular Card (30 Days — Gold Focus) */
+.pricing-card.is-popular {
+  background: linear-gradient(180deg, rgba(255, 184, 0, 0.11) 0%, var(--bg-card) 42%, var(--bg-panel) 100%);
+  border: 2px solid var(--gold);
+  box-shadow: var(--shadow-gold);
+}
+
+.pricing-card.is-popular:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 38px rgba(255, 184, 0, 0.32);
+}
+
+/* Lifetime Card (Best Value — Cyan Focus) */
+.pricing-card.is-lifetime {
+  background: linear-gradient(180deg, rgba(0, 229, 255, 0.11) 0%, var(--bg-card) 42%, var(--bg-panel) 100%);
+  border: 2px solid var(--cyan);
+  box-shadow: var(--shadow-cyan);
+}
+
+.pricing-card.is-lifetime:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 38px rgba(0, 229, 255, 0.3);
+}
+
+.pricing-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-hi);
+}
+
+.pricing-card.is-popular .pricing-badge {
+  background: linear-gradient(135deg, var(--gold-hi) 0%, var(--gold) 100%);
+  color: var(--bg-deep);
+  border-color: var(--gold-hi);
+}
+
+.pricing-card.is-lifetime .pricing-badge {
+  background: linear-gradient(135deg, var(--cyan-hi) 0%, var(--cyan) 100%);
+  color: var(--bg-deep);
+  border-color: var(--cyan-hi);
+}
+
+.pricing-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.pricing-price {
+  font-family: var(--font-display);
+  font-size: 2.15rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.pricing-card.is-popular .pricing-price {
+  color: var(--gold-hi);
+}
+
+.pricing-card.is-lifetime .pricing-price {
+  color: var(--cyan-hi);
+}
+
+.pricing-per-day {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--emerald-hi);
+  background: var(--emerald-dim);
+  border: 1px solid rgba(0, 230, 138, 0.28);
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.pricing-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 4px 0 8px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(49, 70, 104, 0.45);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.45;
+}
+
+.pricing-features li::before {
+  content: '✓';
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--emerald);
+  flex-shrink: 0;
+}
+
+/* Compact 3-Column Strip (7 Days, 180 Days, 360 Days) */
+.pricing-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.pricing-compact-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+}
+
+.pricing-compact-card:hover {
+  background: var(--bg-card);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   6. Automated Discord Purchase Flow (#how-to-buy)
+   -------------------------------------------------------------------------- */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.step-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.step-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-hi);
+}
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gold-hi);
+  background: var(--gold-dim);
+  border: 1px solid rgba(255, 184, 0, 0.4);
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.step-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.notice-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 22px;
+  background: rgba(255, 184, 0, 0.08);
+  border: 1px solid rgba(255, 184, 0, 0.45);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.discord-banner {
+  position: relative;
+  background: linear-gradient(135deg, #5865F2 0%, #3A43B5 100%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  box-shadow: 0 16px 42px rgba(88, 101, 242, 0.35);
+  overflow: hidden;
+}
+
+.discord-banner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   7. Software User Guide Hub — 4 Interactive Tabs (#guide)
+   -------------------------------------------------------------------------- */
+.guide-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  background: var(--bg-panel);
+  padding: 8px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+
+.guide-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 14px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.guide-tab-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.guide-tab-btn.is-active {
+  color: var(--bg-deep);
+  background: linear-gradient(135deg, var(--gold-hi) 0%, var(--gold) 100%);
+  border-color: var(--gold-hi);
+  box-shadow: 0 4px 16px rgba(255, 184, 0, 0.3);
+}
+
+.guide-panel {
+  display: none;
+  animation: fadePanel 0.28s ease-out;
+}
+
+.guide-panel.is-active {
+  display: block;
+}
+
+@keyframes fadePanel {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Guide Step Cards (Tab 1 & Tab 2) */
+.guide-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.guide-step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color var(--transition-fast);
+}
+
+.guide-step-card:hover {
+  border-color: var(--border-hi);
+}
+
+.guide-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--cyan-hi);
+  background: var(--cyan-dim);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+}
+
+.guide-step-img-wrap {
+  position: relative;
+  margin-top: auto;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-hi);
+  background: var(--bg-input);
+  cursor: zoom-in;
+}
+
+.guide-step-img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.35s var(--ease-out);
+}
+
+.guide-step-img-wrap:hover .guide-step-img {
+  transform: scale(1.03);
+}
+
+/* Tab 2: Interactive 4/4 PUBG Mandatory Settings Checklist */
+.checklist-box {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  margin-bottom: 24px;
+}
+
+.checklist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.checklist-progress {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold-hi);
+  background: var(--gold-dim);
+  border: 1px solid rgba(255, 184, 0, 0.38);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+}
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.checklist-item {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.checklist-item:hover {
+  border-color: var(--border-hi);
+  background: var(--bg-card-hover);
+}
+
+.checklist-item.is-checked {
+  border-color: var(--emerald);
+  background: linear-gradient(180deg, rgba(0, 230, 138, 0.08) 0%, var(--bg-card) 100%);
+  box-shadow: 0 4px 20px rgba(0, 230, 138, 0.12);
+}
+
+.checklist-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--emerald);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checklist-status {
+  margin-top: 18px;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.94rem;
+  text-align: center;
+  background: rgba(255, 184, 0, 0.08);
+  border: 1px solid rgba(255, 184, 0, 0.35);
+  color: var(--gold-hi);
+  transition: all var(--transition-fast);
+}
+
+.checklist-status.is-complete {
+  background: var(--emerald-dim);
+  border-color: var(--emerald);
+  color: var(--emerald-hi);
+}
+
+/* Tab 3: Hotkey Reference Table */
+.hotkey-filter-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.hotkey-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.hotkey-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 620px;
+}
+
+.hotkey-table th {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gold-hi);
+  background: rgba(8, 12, 19, 0.85);
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-hi);
+}
+
+.hotkey-table td {
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  vertical-align: middle;
+}
+
+.hotkey-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.hotkey-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+/* Tab 4: Troubleshooting Grid */
+.trouble-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.trouble-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.trouble-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-hi);
+  border-left-color: var(--cyan);
+}
+
+/* --------------------------------------------------------------------------
+   8. FAQ Accordion (#faq), Final Conversion Banner (#cta-final) & Footer
+   -------------------------------------------------------------------------- */
+.faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.faq-item.is-open {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, rgba(255, 184, 0, 0.06) 0%, var(--bg-card) 100%);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.faq-question:hover {
+  color: var(--gold-hi);
+}
+
+.faq-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg-input);
+  border: 1px solid var(--border-hi);
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.faq-item.is-open .faq-icon {
+  transform: rotate(180deg);
+  background: var(--gold);
+  color: var(--bg-deep);
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 22px 20px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  border-top: 1px solid rgba(49, 70, 104, 0.35);
+  padding-top: 14px;
+}
+
+.faq-item.is-open .faq-answer {
+  display: block;
+}
+
+/* Final Conversion Banner */
+.cta-final-box {
+  position: relative;
+  text-align: center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 184, 0, 0.16) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 229, 255, 0.14) 0%, transparent 50%),
+    linear-gradient(180deg, var(--bg-card) 0%, var(--bg-panel) 100%);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-xl);
+  padding: 56px 32px;
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(255, 184, 0, 0.14);
+  overflow: hidden;
+}
+
+/* Site Footer */
+.site-footer {
+  background: #06090E;
+  border-top: 1px solid var(--border);
+  padding: 64px 0 36px;
+  color: var(--text-secondary);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid rgba(30, 43, 66, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints (1024px, 768px, 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .video-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .guide-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 40px;
+    padding-bottom: 56px;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features-grid,
+  .accessory-strip,
+  .pricing-featured-grid,
+  .pricing-compact-grid,
+  .steps-grid,
+  .guide-steps-grid,
+  .checklist-grid,
+  .trouble-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .discord-banner {
+    padding: 24px 20px;
+  }
+
+  .discord-banner-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-final-box {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+  }
+
+  .preset-selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .phase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .weapons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .guide-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-compact-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pricing-compact-card .btn {
+    width: 100%;
+  }
+}
