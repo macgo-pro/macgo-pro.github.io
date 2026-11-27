@@ -89,7 +89,64 @@ window.SITE_DATA = {
     }
   ],
 
-  // Bảng giá CHỈ hiển thị gói MACGO (7 gói chuẩn theo Bot Discord)
+  pricingTagline: "LỰA CHỌN GÓI PHÙ HỢP VỚI NHU CẦU CỦA BẠN!",
+
+  // Bảng giá 3 cột chính thức: GÓI MACGO, GÓI AIM-AI, GÓI COMBO (MACGO + AIM-AI)
+  pricingPlans: [
+    {
+      id: "macgo",
+      colClass: "plan-col-macgo",
+      iconKey: "macgo",
+      title: "GÓI MACGO",
+      subtitle: "MACRO PUBG PC",
+      ctaText: "Mua Gói MACGO",
+      tiers: [
+        { duration: "1 NGÀY", hours: "24 GIỜ", priceFormatted: "11,000 VNĐ" },
+        { duration: "7 NGÀY", hours: "168 GIỜ", priceFormatted: "69,000 VNĐ" },
+        { duration: "30 NGÀY", hours: "720 GIỜ", priceFormatted: "269,000 VNĐ" },
+        { duration: "90 NGÀY", hours: "2,160 GIỜ", priceFormatted: "579,000 VNĐ" },
+        { duration: "180 NGÀY", hours: "4,320 GIỜ", priceFormatted: "799,000 VNĐ" },
+        { duration: "360 NGÀY", hours: "8,640 GIỜ", priceFormatted: "1,099,000 VNĐ" },
+        { duration: "LIFETIME", hours: "~100 NĂM", priceFormatted: "1,799,000 VNĐ", isLifetime: true }
+      ]
+    },
+    {
+      id: "aim-ai",
+      colClass: "plan-col-aim",
+      iconKey: "aim",
+      title: "GÓI AIM-AI",
+      subtitle: "AIM ASSIST AI",
+      ctaText: "Mua Gói AIM-AI",
+      tiers: [
+        { duration: "1 NGÀY", hours: "24 GIỜ", priceFormatted: "11,000 VNĐ" },
+        { duration: "7 NGÀY", hours: "168 GIỜ", priceFormatted: "69,000 VNĐ" },
+        { duration: "30 NGÀY", hours: "720 GIỜ", priceFormatted: "269,000 VNĐ" },
+        { duration: "90 NGÀY", hours: "2,160 GIỜ", priceFormatted: "579,000 VNĐ" },
+        { duration: "180 NGÀY", hours: "4,320 GIỜ", priceFormatted: "799,000 VNĐ" },
+        { duration: "360 NGÀY", hours: "8,640 GIỜ", priceFormatted: "1,099,000 VNĐ" },
+        { duration: "LIFETIME", hours: "~100 NĂM", priceFormatted: "1,799,000 VNĐ", isLifetime: true }
+      ]
+    },
+    {
+      id: "combo",
+      colClass: "plan-col-combo",
+      iconKey: "combo",
+      title: "GÓI COMBO",
+      subtitle: "MACGO + AIM-AI",
+      ctaText: "Mua Gói COMBO",
+      tiers: [
+        { duration: "1 NGÀY", hours: "24 GIỜ", priceFormatted: "21,000 VNĐ" },
+        { duration: "7 NGÀY", hours: "168 GIỜ", priceFormatted: "119,000 VNĐ" },
+        { duration: "30 NGÀY", hours: "720 GIỜ", priceFormatted: "419,000 VNĐ" },
+        { duration: "90 NGÀY", hours: "2,160 GIỜ", priceFormatted: "839,000 VNĐ" },
+        { duration: "180 NGÀY", hours: "4,320 GIỜ", priceFormatted: "1,069,000 VNĐ" },
+        { duration: "360 NGÀY", hours: "8,640 GIỜ", priceFormatted: "1,649,000 VNĐ" },
+        { duration: "LIFETIME", hours: "~100 NĂM", priceFormatted: "2,649,000 VNĐ", isLifetime: true, badge: "BEST VALUE" }
+      ]
+    }
+  ],
+
+  // Bảng giá tương thích ngược (MACGO 7 gói chuẩn theo Bot Discord)
   pricing: [
     {
       id: "1day",

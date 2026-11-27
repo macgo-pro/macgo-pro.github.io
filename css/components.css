@@ -600,6 +600,25 @@ kbd.keycap.keycap-gold {
 }
 
 /* --------------------------------------------------------------------------
+   6. Clean Compact Section Headers (Eyebrow-Only Balance)
+   -------------------------------------------------------------------------- */
+.section-header .eyebrow:last-child {
+  margin-bottom: 0;
+}
+
+.section-header:not(:has(.section-title)):not(:has(.section-desc)),
+.section-header.section-header-compact {
+  margin-bottom: 30px;
+}
+
+.section-header .eyebrow:only-child {
+  font-size: 0.88rem;
+  letter-spacing: 0.14em;
+  padding: 7px 18px;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
    Responsive Component Adjustments
    -------------------------------------------------------------------------- */
 @media (max-width: 960px) {
@@ -610,6 +629,13 @@ kbd.keycap.keycap-gold {
 
   .nav-toggle {
     display: inline-flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-header:not(:has(.section-title)):not(:has(.section-desc)),
+  .section-header.section-header-compact {
+    margin-bottom: 22px;
   }
 }
 
