@@ -15,7 +15,7 @@ macgo-landing/
 │   ├── components.css            # Header, Buttons, Badges, Phím cơ (<kbd>), Floating Discord CTA
 │   └── sections.css              # Bố cục chi tiết 10 section & Responsive (Desktop / Tablet / Mobile)
 ├── js/
-│   ├── site-data.js              # TẬP TIN DỮ LIỆU TRUNG TÂM (Link Discord, Drive, Bảng giá, Vũ khí, FAQ)
+│   ├── site-data.js              # TẬP TIN DỮ LIỆU TRUNG TÂM (Link Discord, Link Tải, Bảng giá, Vũ khí, FAQ)
 │   └── main.js                   # Logic tương tác (Mockup 4 pha, Lọc súng, Video Chapters, Tabs, Checklist)
 ├── assets/
 │   ├── logo.png                  # Logo lục giác chính thức MACGO
@@ -37,13 +37,13 @@ macgo-landing/
 
 Toàn bộ liên kết, bảng giá, danh sách súng, phím tắt và câu hỏi thường gặp được quản lý tập trung tại **1 file duy nhất**: `js/site-data.js`. Bạn không cần sửa trực tiếp trong `index.html`.
 
-### 1. Thay đổi Link Discord, Link Tải Google Drive hoặc Video YouTube
+### 1. Thay đổi Link Discord, Link Tải Phần Mềm hoặc Video YouTube
 Mở file `js/site-data.js` và chỉnh tại mục `links`:
 
 ```javascript
 links: {
   discordInvite: "https://discord.gg/XK3RJMPD8j",
-  downloadDrive: "https://drive.google.com/file/d/1qeFodyL6LyjSwmlmeU_DLJpABf0kT1PA/view",
+  downloadDrive: "https://www.mediafire.com/file/65kn4uegwp00slp/MacgoPro.rar/file",
   youtubeWatch: "https://www.youtube.com/watch?v=U-3y32RV4Eo",
   youtubeId: "U-3y32RV4Eo"
 }

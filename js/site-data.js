@@ -12,7 +12,7 @@ window.SITE_DATA = {
 
   links: {
     discordInvite: "https://discord.gg/XK3RJMPD8j",
-    downloadDrive: "https://drive.google.com/file/d/1qeFodyL6LyjSwmlmeU_DLJpABf0kT1PA/view",
+    downloadDrive: "https://www.mediafire.com/file/65kn4uegwp00slp/MacgoPro.rar/file",
     youtubeWatch: "https://www.youtube.com/watch?v=U-3y32RV4Eo",
     youtubeId: "U-3y32RV4Eo"
   },
